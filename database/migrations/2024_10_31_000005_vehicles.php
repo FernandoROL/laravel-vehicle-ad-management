@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->foreignId("modelID")->constrained("vehicle_models");
             $table->foreignId("versionID")->constrained("versions");
             $table->foreignId("typeID")->constrained("types");
-            $table->integer("fipeCode")->nullable();
+            $table->string("fipeCode")->nullable();
             $table->string("color");
             $table->string("engine");
             $table->string("trunkSize");
