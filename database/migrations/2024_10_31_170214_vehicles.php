@@ -1,0 +1,30 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create("vehicles", function (Blueprint $table) {
+            $table->id();
+            $table->integer("uniqueCode")->unique();
+            $table->foreignId("brandID")->constrained("brands");
+            $table->foreignId("modelID")->constrained("models");
+            $table->foreignId("versionID")->constrained("versions");
+            $table->foreignId("typeID")->constrained("types");
+            $table->integer("fipeCode")->nullable();
+            $table->string("color");
+            $table->string("engine");
+            $table->string("trunkSize");
+            $table->foreignId("userID")->constrained("users");
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists("vehicles");
+    }
+};

@@ -1,0 +1,45 @@
+# Laravel specific files and directories
+/vendor/
+node_modules/
+public/storage
+storage/*.key
+.env
+.env.*.backup
+
+# Laravel cached files
+bootstrap/cache/*.php
+
+# Log files
+*.log
+
+# Docker related files
+.docker/
+.docker/mysql/dbdata/
+
+# Sensitive keys and files
+*.pem
+*.ibd
+*.frm
+*.MYD
+*.MYI
+*.opt
+*.TRN
+*.CSM
+*.CSV
+
+# MySQL log and configuration files
+ibdata*
+ib_logfile*
+ibtmp*
+auto.cnf
+
+# IDE and OS-specific files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Other temporary files
+*.tmp
+*.bak
+*.swp
