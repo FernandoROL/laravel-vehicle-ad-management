@@ -15,4 +15,16 @@ class User extends Model
         "password",
         "status"
     ];
+
+    public function getUserSearchIndex(string $search = '')
+    {
+        $user = $this->where(function ($query) use ($search) {
+            if ($search) {
+                $query->where('name', $search);
+                $query->orWhere('name', 'like', '%' . $search . '%');
+            }
+        })->get();
+
+        return $user;
+    }
 }

@@ -13,12 +13,13 @@ return new class extends Migration {
             $table->foreignId("brandID")->constrained("brands");
             $table->foreignId("modelID")->constrained("vehicle_models");
             $table->foreignId("versionID")->constrained("versions");
-            $table->foreignId("typeID")->constrained("types");
+            $table->foreignId("typeID")->constrained("vehicle_types");
             $table->string("fipeCode")->nullable();
             $table->string("color");
             $table->string("engine");
             $table->string("trunkSize");
             $table->foreignId("userID")->constrained("users");
+            $table->timestamps();
         });
     }
 
