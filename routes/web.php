@@ -25,6 +25,7 @@ Route::prefix('reports')->group( function () {
     Route::get("/",[QueryController::class,"index"])->name("query.index");
 
     Route::get("/SQL01",[QueryController::class,"showUserVehicleCount"])->name("01.query");
+    Route::get("/SQL02",[QueryController::class,"showBrandVehicleCount"])->name("02.query");
 });
 
 Route::prefix('users')->group(function () {
